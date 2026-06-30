@@ -1,0 +1,124 @@
+{
+  "app": {
+    "base_language": "en",
+    "push": {
+      "source": [
+        {
+          "path": "./JSON/en/common.json",
+          "file_format": "react_nested_json",
+          "tag": "CommonJSON",
+          "key_prefix": "common_",
+          "keepTagIds": true,
+          "skipNonStringValues": true,
+          "remove_cr_char": true,
+          "disable_plurals": true,
+          "language": "en"
+        },
+        {
+          "path": "./CSV/en/countries.csv",
+          "file_format": "csv",
+          "tag": "CountriesCSV",
+          "columnDescription": {
+            "KEY": 0,
+            "en": 1
+          },
+          "excludeHeaderRow": false,
+          "key_prefix": "countries_",
+          "autoGenerateMissingKeys": false,
+          "language": "en"
+        },
+        {
+          "path": "./JSON/en/loading.json",
+          "file_format": "react_nested_json",
+          "tag": "LoadingJSON",
+          "key_prefix": "loading_",
+          "language": "en"
+        },
+        {
+          "path": "./CSV/en/payments.csv",
+          "file_format": "csv",
+          "tag": "PaymentsCSV",
+          "columnDescription": {
+            "KEY": 0,
+            "en": 1
+          },
+          "excludeHeaderRow": false,
+          "key_prefix": "payments_",
+          "language": "en"
+        },
+        {
+          "path": "./properties/en/selfserve.properties",
+          "file_format": "java_properties",
+          "tag": "SelfserveProp",
+          "language": "en"
+        }
+      ]
+    },
+    "pull": {
+      "target": [
+        {
+          "path": "./JSON/en/<language>.json",
+          "file_format": "react_nested_json",
+          "tag": "CommonJSON",
+          "key_prefix": "common_",
+          "exclude_languages": [
+            "en"
+          ]
+        },
+        {
+          "path": "./CSV/en/<language>.csv",
+          "file_format": "csv",
+          "tag": "CountriesCSV",
+          "columnDescription": {
+            "KEY": 0,
+            "<language>": 1
+          },
+          "excludeHeaderRow": true,
+          "excludeBaseLang": true,
+          "key_prefix": "countries_",
+          "exclude_languages": [
+            "en"
+          ]
+        },
+        {
+          "path": "./JSON/en/<language>.json",
+          "file_format": "react_nested_json",
+          "tag": "LoadingJSON",
+          "key_prefix": "loading_",
+          "exclude_languages": [
+            "en"
+          ]
+        },
+        {
+          "path": "./CSV/en/<language>.csv",
+          "file_format": "csv",
+          "tag": "PaymentsCSV",
+          "columnDescription": {
+            "KEY": 0,
+            "<language>": 1
+          },
+          "excludeHeaderRow": true,
+          "excludeBaseLang": false,
+          "key_prefix": "payments_",
+          "exclude_languages": [
+            "en"
+          ]
+        },
+        {
+          "path": "./properties/en/<language>.properties",
+          "file_format": "java_properties",
+          "tag": "SelfserveProp",
+          "includeInvisibleId": true,
+          "includeMetadata": true,
+          "export_empty": true,
+          "sort_by_key": true,
+          "ignore_duplicates": true,
+          "remove_cr_char": true,
+          "exclude_languages": [
+            "en"
+          ]
+        }
+      ]
+    }
+  }
+}
