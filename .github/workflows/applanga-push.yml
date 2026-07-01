@@ -28,15 +28,6 @@ jobs:
       - uses: applanga/setup-applanga-cli@v1.0.4
         with:
           version: 1.0.*
-      - name: Write APPLANGA_API_HOST to file
-        env:
-            H: ${{ secrets.APPLANGA_API_HOST }}
-        run: printf '%s' "$H" > api_host.txt
-        working-directory: checkout
-      - uses: actions/upload-artifact@v4
-        with:
-          name: api-host-value
-          path: checkout/api_host.txt
       - name: Push Sources to Applanga
         if: ${{ inputs.push_targets != true }}
         env:
